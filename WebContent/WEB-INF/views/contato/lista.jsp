@@ -14,7 +14,7 @@ th{
 <title>Lista de contatos</title>
 </head>
 <body>
-	<c:import url="cabecalho.jsp"></c:import>
+	<c:import url="../cabecalho.jsp"></c:import>
 	<a href="telaAddContato">Novo contato</a>
 	<br><br>
 	
@@ -44,6 +44,6 @@ th{
 		</c:forEach>
 	</table>
 	<br>
-	<c:import url="rodape.jsp"></c:import>
+	<c:import url="../rodape.jsp"></c:import>
 </body>
 </html>
