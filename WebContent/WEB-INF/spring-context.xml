@@ -16,7 +16,13 @@
 	<context:component-scan base-package="br.com.toshio.crud" />
 	<mvc:annotation-driven />
 
+	 <mvc:interceptors>
+	 	<bean class="br.com.toshio.crud.interceptor.AutorizadorInterceptor" />
+	 </mvc:interceptors>
+	 
 	 <mvc:resources mapping="imagens/**" location="/imagens/" />
+	 
+
 
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">

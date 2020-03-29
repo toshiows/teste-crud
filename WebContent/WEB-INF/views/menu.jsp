@@ -5,18 +5,20 @@
 <html>
 <head>
 <style>
-a:link, a:visited {
+#buttonAcesso {
   background-color: #39add4;
   color: white;
   padding: 14px 25px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
+
 }
 
-a:hover, a:active {
+  #buttonAcesso:hover, #buttonAcesso:active {
   background-color: #218aad;
 }
+
 </style>
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -25,7 +27,9 @@ a:hover, a:active {
 	<c:import url="cabecalho.jsp"></c:import>
 	
 	<h2>Bem vindo, ${usuarioLogado.login}!</h2>
-	<a href="listaContato">Lista de contatos</a>
+	<a href="listaContato" id="buttonAcesso">Lista de contatos</a>
+	<br><br>
+	<a href="logout">Logout</a>
 	<c:import url="rodape.jsp"></c:import>
 </body>
 </html>
