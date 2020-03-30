@@ -1,2 +1,8 @@
 # teste-crud
-Repo para treinar crud com spring mvc
+## Repositorio para treinar java web com crud
+
+**Recursos utilizadas até o momento:*
+
+* Spring MVC
+* MySQL
+* JSTL
