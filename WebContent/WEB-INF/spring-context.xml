@@ -20,7 +20,7 @@
 	 	<bean class="br.com.toshio.crud.interceptor.AutorizadorInterceptor" />
 	 </mvc:interceptors>
 	 
-	 <mvc:resources mapping="imagens/**" location="/imagens/" />
+	 <mvc:resources mapping="resources/**" location="/resources/" />
 	 
 
 
