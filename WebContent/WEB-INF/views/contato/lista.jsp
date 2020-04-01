@@ -17,7 +17,7 @@ th{
 	<c:import url="../cabecalho.jsp"></c:import>
 	<a href="telaAddContato">Novo contato</a>
 	<br><br>
-	
+	<div class="container">
 	<table border="1">
 		<tr bgcolor="#1556d6">
 			<th>Id</th>
@@ -43,7 +43,10 @@ th{
 			</tr>
 		</c:forEach>
 	</table>
+	</div>
 	<br>
 	<c:import url="../rodape.jsp"></c:import>
+	
+	
 </body>
 </html>

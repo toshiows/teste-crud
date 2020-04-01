@@ -1,6 +1,25 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="resources/bootstrap/css/bootstrap.min.js" media="screen" />
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
 
-<img src="<c:url	value="resources/imagens/cabecalho.png"/>"	height="100px" width="150px"/>
+<nav class="navbar-expand-lg navbar navbar-inverse">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="listaContato">CRUDClientes</a>
+		</div>
+		<ul class="nav navbar-nav navbar-right">
+			<li><a href="logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+		</ul>
+	</div>
 
-<h2>Sistema de cadastro de clientes</h2>
-<hr />
+</nav>
