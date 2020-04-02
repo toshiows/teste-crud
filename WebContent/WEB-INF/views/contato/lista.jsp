@@ -5,19 +5,34 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script type="text/javascript" src="resources/js/sidebar.js"></script>
+<link rel="stylesheet" type="text/css" href="resources/css/sidebar.css" media="screen" />
+
 <style type="text/css">
 th{
 	color: white;
 }
 </style>
+
 <meta charset="UTF-8">
 <title>Lista de contatos</title>
 </head>
 <body>
-	<c:import url="../cabecalho.jsp"></c:import>
+<c:import url="../cabecalho.jsp"></c:import>
+	<div id="mySidebar" class="sidebar">
+	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+	  <a href="#">${usuarioLogado.login}</a>
+	  <a href="#">#</a>
+	  <a href="#">#</a>
+	  <a href="#">Sobre</a>
+	</div>
+	
+<div id="main">	   
+<br><br>
+
 	<a href="telaAddContato">Novo contato</a>
 	<br><br>
-	<div class="container">
+	
 	<table border="1">
 		<tr bgcolor="#1556d6">
 			<th>Id</th>
