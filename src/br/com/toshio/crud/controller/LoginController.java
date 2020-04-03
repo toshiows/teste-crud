@@ -20,7 +20,7 @@ public class LoginController {
 	public String efetuaLogin(Usuario usuario, HttpSession session) {
 		if(new UsuarioDao().existeUser(usuario)) {
 			session.setAttribute("usuarioLogado", usuario);
-			return "menu";
+			return "redirect:listaContato";
 		}
 		
 		return "redirect:loginForm"; //redireciona para login-form se estiver incorreto

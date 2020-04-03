@@ -7,12 +7,11 @@
 <head>
 <script type="text/javascript" src="resources/js/sidebar.js"></script>
 <link rel="stylesheet" type="text/css" href="resources/css/sidebar.css" media="screen" />
-
-<style type="text/css">
-th{
-	color: white;
-}
-</style>
+ 
+ 
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 <meta charset="UTF-8">
 <title>Lista de contatos</title>
@@ -28,22 +27,23 @@ th{
 	</div>
 	
 <div id="main">	   
-<br><br>
 
-	<a href="telaAddContato">Novo contato</a>
+
+	<a class="btn btn-info" href="telaAddContato">＋ Novo contato</a>
 	<br><br>
 	
-	<table border="1">
-		<tr bgcolor="#1556d6">
-			<th>Id</th>
-			<th>Nome</th>
-			<th>Email</th>
-			<th>Endereco</th>
-			<th>Data de Nascimento</th>
-			<th colspan="2">Ações</th>
-		</tr>
+	<table class="table">
+		<thead class="thead-dark">
+			<tr>
+				<th scope="col">ID</th>
+				<th scope="col">Nome</th>
+				<th scope="col">Email</th>
+				<th scope="col">Endereço</th>
+				<th scope="col">Data de Nascimento</th>
+				<th scope="col" colspan="2" class="text-center">Ações</th>
+			</tr>
 		<c:forEach items="${contatos}" var="contato" varStatus="id">
-			<tr bgcolor="#${id.count % 2 == 0 ? '87aefa' : 'ffffff'}">
+			<tr bgcolor="#${id.count % 2 == 0 ? 'f2f4f7' : 'ffffff'}">
 				<td>${contato.id}</td>
 				<td>${contato.nome}</td>
 				<td>${contato.email}</td>
@@ -52,16 +52,14 @@ th{
 					<fmt:formatDate value="${contato.dataNascimento.time}"
 					pattern="dd/MM/yyyy" />
 				</td>
-				<td><a href="removeContato?id=${contato.id}">Remover</a></td>
-				<td><a href="mostraContato?id=${contato.id}">Alterar</a></td>
-				
-			</tr>
+				<td class="text-center" ><a href="removeContato?id=${contato.id}"><i class="material-icons">&#xE872;</i></a></td>
+				<td class="text-center" ><a href="mostraContato?id=${contato.id}"><i class="material-icons">&#xE254;</i></a></td>
+				</tr>
 		</c:forEach>
 	</table>
 	</div>
 	<br>
 	<c:import url="../rodape.jsp"></c:import>
-	
 	
 </body>
 </html>
