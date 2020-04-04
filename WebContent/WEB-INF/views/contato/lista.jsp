@@ -17,49 +17,48 @@
 <title>Lista de contatos</title>
 </head>
 <body>
-<c:import url="../cabecalho.jsp"></c:import>
-	<div id="mySidebar" class="sidebar">
-	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-	  <a href="#">${usuarioLogado.login}</a>
-	  <a href="#">#</a>
-	  <a href="#">#</a>
-	  <a href="#">Sobre</a>
-	</div>
-	
-<div id="main">	   
-
-
-	<a class="btn btn-info" href="telaAddContato">＋ Novo contato</a>
-	<br><br>
-	
-	<table class="table">
-		<thead class="thead-dark">
-			<tr>
-				<th scope="col">ID</th>
-				<th scope="col">Nome</th>
-				<th scope="col">Email</th>
-				<th scope="col">Endereço</th>
-				<th scope="col">Data de Nascimento</th>
-				<th scope="col" colspan="2" class="text-center">Ações</th>
-			</tr>
-		<c:forEach items="${contatos}" var="contato" varStatus="id">
-			<tr bgcolor="#${id.count % 2 == 0 ? 'f2f4f7' : 'ffffff'}">
-				<td>${contato.id}</td>
-				<td>${contato.nome}</td>
-				<td>${contato.email}</td>
-				<td>${contato.endereco}</td>
-				<td>
-					<fmt:formatDate value="${contato.dataNascimento.time}"
-					pattern="dd/MM/yyyy" />
-				</td>
-				<td class="text-center" ><a href="removeContato?id=${contato.id}"><i class="material-icons">&#xE872;</i></a></td>
-				<td class="text-center" ><a href="mostraContato?id=${contato.id}"><i class="material-icons">&#xE254;</i></a></td>
+	<c:import url="../cabecalho.jsp"></c:import>
+		<div id="mySidebar" class="sidebar">
+		  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+		  <a href="#">(ºcº) ${usuarioLogado.login}</a>
+		  <a href="#">#</a>
+		  <a href="#">#</a>
+		  <a href="#">Sobre</a>
+		</div>
+		
+	<div id="main">	
+		   
+		<a class="btn btn-info" href="telaAddContato">＋ Novo contato</a>
+		<br><br>
+		
+		<table class="table">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col">ID</th>
+					<th scope="col">Nome</th>
+					<th scope="col">Email</th>
+					<th scope="col">Endereço</th>
+					<th scope="col">Data de Nascimento</th>
+					<th scope="col" colspan="2" class="text-center">Ações</th>
 				</tr>
-		</c:forEach>
-	</table>
-	</div>
-	<br>
-	<c:import url="../rodape.jsp"></c:import>
+			<c:forEach items="${contatos}" var="contato" varStatus="id">
+				<tr bgcolor="#${id.count % 2 == 0 ? 'f2f4f7' : 'ffffff'}">
+					<td>${contato.id}</td>
+					<td>${contato.nome}</td>
+					<td>${contato.email}</td>
+					<td>${contato.endereco}</td>
+					<td>
+						<fmt:formatDate value="${contato.dataNascimento.time}"
+						pattern="dd/MM/yyyy" />
+					</td>
+					<td class="text-center" ><a href="removeContato?id=${contato.id}"><i class="material-icons">&#xE872;</i></a></td>
+					<td class="text-center" ><a href="mostraContato?id=${contato.id}"><i class="material-icons">&#xE254;</i></a></td>
+					</tr>
+			</c:forEach>
+		</table>
+		</div>
+		<br>
+		<c:import url="../rodape.jsp"></c:import>
 	
 </body>
 </html>

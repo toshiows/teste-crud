@@ -16,7 +16,7 @@
 	<nav class="navbar-expand-lg navbar navbar-inverse">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="listaContato"><b>CRUD</b>Clientes</a>
+				<a class="navbar-brand" href="listaContato"><b>CRUD</b>Contatos</a>
 			</div>
 
 
