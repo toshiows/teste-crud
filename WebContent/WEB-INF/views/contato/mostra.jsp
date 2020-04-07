@@ -1,4 +1,5 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -15,7 +16,8 @@
 <body>
 	<h3>Alterar contato - ${contatos.id}</h3>
 	
-	
+	<form:errors path="contato.nome"/>
+	<form:errors path="contato.email"/>
 	<form action="alteraContato" method="POST">
 		<input type="hidden" name="id" value="${contatos.id}" />
 		<div class="form-row">

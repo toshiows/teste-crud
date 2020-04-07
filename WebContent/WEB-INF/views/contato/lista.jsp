@@ -21,9 +21,10 @@
 		<div id="mySidebar" class="sidebar">
 		  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
 		  <a href="#">(ºcº) ${usuarioLogado.login}</a>
-		  <a href="#">#</a>
-		  <a href="#">#</a>
-		  <a href="#">Sobre</a>
+		  <a href="#">Usuários</a>
+		  <a href="mostraSobre">Sobre</a>
+		  <a href="logout">Logout</a>
+		  
 		</div>
 		
 	<div id="main">	

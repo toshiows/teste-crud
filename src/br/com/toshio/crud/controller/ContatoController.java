@@ -2,8 +2,11 @@ package br.com.toshio.crud.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.com.toshio.crud.dao.ContatoDao;
@@ -18,7 +21,16 @@ public class ContatoController {
 	}
 	
 	@RequestMapping("adicionaContato")
-	public String adiciona(Contato contato) {
+	public String adiciona(@Valid Contato contato, BindingResult result) {
+		
+		if(result.hasFieldErrors("nome")) {
+			return "contato/formulario";
+		}
+		
+		if(result.hasFieldErrors("email")) {
+			return "contato/formulario";
+		}
+		
 		ContatoDao dao = new ContatoDao();
 		dao.adiciona(contato);
 		return "redirect:listaContato";
@@ -50,15 +62,24 @@ public class ContatoController {
 	}
 	
 	@RequestMapping("alteraContato")
-	public String altera(Contato contato) {
+	public String altera(@Valid Contato contato, BindingResult result) {
+		
+		if(result.hasFieldErrors("nome")) {
+			return "contato/formulario";
+		}
+		
+		if(result.hasFieldErrors("email")) {
+			return "contato/formulario";
+		}
+		
 		ContatoDao dao = new ContatoDao();
 		dao.altera(contato);
 		return "redirect:listaContato";
 	}
 	
-	/*
-	 * FAZER A LÓGICA PARA ALTERAR E MOSTRAR COM JSON E AJAX
-	 * ADICIONAR CSS
-	 * */
+	@RequestMapping("mostraSobre")
+	public String sobre() {
+		return "contato/sobre";
+	}
 	
 }

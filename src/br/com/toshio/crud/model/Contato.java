@@ -2,12 +2,17 @@ package  br.com.toshio.crud.model;
 
 import java.util.Calendar;
 
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.format.annotation.DateTimeFormat;
 
 public class Contato {
 
 	private Long id;
+	@Size(min=5, message="O nome deve conter pelo menos 5 caracteres")
 	private String nome;
+	@NotEmpty(message="O campo email não pode ser vazio")
 	private String email;
 	private String endereco;
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
