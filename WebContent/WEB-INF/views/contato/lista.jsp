@@ -28,9 +28,10 @@
 		</div>
 		
 	<div id="main">	
-		   
-		<a class="btn btn-info" href="telaAddContato">＋ Novo contato</a>
+		<a class="btn btn-info" href="telaAddContato"><b>＋</b> Novo contato</a>
 		<br><br>
+		
+		<img src="${usuarioLogado.avatar}"/>
 		
 		<table class="table">
 			<thead class="thead-dark">

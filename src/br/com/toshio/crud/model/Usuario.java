@@ -3,7 +3,7 @@ package br.com.toshio.crud.model;
 public class Usuario {
 	private String login;
 	private String senha;
-	
+	private String avatar;
 	
 
 	public String getLogin() {
@@ -17,6 +17,12 @@ public class Usuario {
 	}
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+	public String getAvatar() {
+		return avatar;
+	}
+	public void setAvatar(String avatar) {
+		this.avatar = avatar;
 	}
 	
 	

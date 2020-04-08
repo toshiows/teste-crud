@@ -21,6 +21,9 @@ public class UsuarioDao {
 	}
 	
 	public boolean existeUser(Usuario usuario) {
+		
+		boolean existe;
+		
 		if(usuario == null) {
 			throw new IllegalArgumentException("Usuario não pode ser nulo");
 		}
@@ -32,17 +35,27 @@ public class UsuarioDao {
 			stmt.setString(1, usuario.getLogin());
 			stmt.setString(2, usuario.getSenha());
 			
+			
 			ResultSet rs = stmt.executeQuery();
 			
-			boolean achou = rs.next();
+			if(rs.next()) {
+				usuario.setAvatar(rs.getString("avatar"));
+				existe = true;
+			} 
+			
+			else {
+				existe = false;
+			}
 			
 			rs.close();
 			stmt.close();
 			
-			return achou;
+			
+			return existe;
 			
 		} catch(SQLException e) {
 			throw new RuntimeException();
 		}
 	}
+	
 }

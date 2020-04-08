@@ -26,6 +26,7 @@ public class LoginController {
 		return "redirect:loginForm"; //redireciona para login-form se estiver incorreto
 	}
 	
+	
 	@RequestMapping("logout")
 	public String logout(HttpSession session) {
 		session.invalidate();
