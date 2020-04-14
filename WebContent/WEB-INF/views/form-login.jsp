@@ -31,7 +31,7 @@
 							<input type="password" name="senha" id="senha" class="form-control">
 						</div>
 						<div class="form-group">
-							<a href="#" class="text-info">Cadastrar</a><br>
+							<a href="cadastroUsuario" class="text-info">Cadastrar</a><br>
 						</div>
 						<div class="form-group text-center">
 							<input type="submit" name="submit" class="btn btn-info btn-md" value="Entrar" >
