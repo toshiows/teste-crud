@@ -1,6 +1,6 @@
 package br.com.toshio.crud.controller;
 
-import javax.servlet.http.HttpSession;
+import java.io.IOException;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,24 +12,24 @@ import br.com.toshio.crud.model.Arquivo;
 
 @Controller
 public class UsuarioController {
+	
+	  private static final String UPLOAD_DIRECTORY ="/imagens"; 
 
 	@RequestMapping("cadastroUsuario")
 	public String cadastroUsuario() {
 		return "usuario/cadastro-usuario";
 	}
 	
-	
 	@RequestMapping(value = "/upload", method = RequestMethod.POST)
-	public String handleFormUpload(@RequestParam("file") MultipartFile file, HttpSession session) {
+	public String handleFormUpload( @RequestParam("file") MultipartFile file) throws IOException{
+		Arquivo arquivo = new Arquivo();
+		arquivo.upload("/home/toshio/eclipse-workspace/CrudExemplo/WebContent/resources/imagens",
+				file.getName(), file.getInputStream());
 		
-        String path=session.getServletContext().getRealPath("/");  
-        String filename=file.getOriginalFilename();  
-        
-		if (!file.isEmpty()) {
-			Arquivo arquivo = new Arquivo();
-			arquivo.upload("/home/toshio/eclipse-workspace/CrudExemplo/WebContent/resources/imagens",
-					path, filename);
-		}
+		return "usuario/cadastro-usuario\"";
+	}
+  
+
 		
 	}
-}
+
